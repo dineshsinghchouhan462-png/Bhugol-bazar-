@@ -110,7 +110,85 @@ section {
   cursor: pointer;
 }
 
-/* Footer */
+/* 📚 EBOOKS SECTION */
+.ebooks {
+  text-align: center;
+  padding: 60px 8%;
+  background: #f9fafc;
+}
+
+.ebooks h1 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.ebook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.ebook-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ebook-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.ebook-img {
+  width: 100%;
+  max-width: 200px;  /* ✅ Image size control */
+  height: auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.ebook-card:hover .ebook-img {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.ebook-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  min-height: 50px;
+}
+
+.ebook-card p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: linear-gradient(135deg, #e63946, #ff6b6b);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #c92a35, #ff4949);
+  transform: scale(1.05);
+}
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -118,7 +196,6 @@ footer {
   margin-top: 2rem;
 }
 
-/* Responsive */
 @media(max-width: 768px) {
   .nav-links {
     display: none;
