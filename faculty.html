@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Faculty - Bhugol Bazar</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar -->
@@ -24,17 +24,55 @@
   <main>
     <section class="faculty">
       <h1>Meet Our Professors</h1>
-      <div class="faculty-list">
-        <div class="faculty-card">
-          <img src="faculty1.jpg" alt="Ravi Gupta">
-          <h3>Ravi Gupta</h3>
-          <p>Professor of Geography</p>
-        </div>
-        <div class="faculty-card">
-          <img src="faculty2.jpg" alt="Yuvraj Singh Rathore">
-          <h3>Yuvraj Singh Rathore</h3>
-          <p>Professor of Geography</p>
-        </div>
+      <div id="facultyList" class="faculty-list">
+        <!-- Faculty cards will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Bhugol Bazar | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const facultyData = [
+      {
+        name: "Ravi Gupta",
+        img: "images/ravi.png",
+        title: "Professor of Geography",
+        details: ""
+      },
+      {
+        name: "Yuvraj Singh Rathore",
+        img: "images/Yuvraj.png",
+        title: "Professor of Geography",
+        details: ""
+      },
+      {
+        name: "Wini Verma",
+        img: "images/wini.png",
+        title: "Assistant Professor",
+        details: "2 Times JRF · PhD · UPSC Interview 2 Times"
+      }
+    ];
+
+    const facultyList = document.getElementById("facultyList");
+
+    facultyData.forEach(faculty => {
+      const card = document.createElement("div");
+      card.className = "faculty-card";
+      card.innerHTML = `
+        <img src="${faculty.img}" alt="${faculty.name}">
+        <h3>${faculty.name}</h3>
+        <p>${faculty.title}</p>
+        ${faculty.details ? `<p>${faculty.details}</p>` : ""}
+      `;
+      facultyList.appendChild(card);
+    });
+  </script>
+</body>
+</html>        </div>
       </div>
     </section>
   </main>
