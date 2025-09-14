@@ -39,6 +39,44 @@
     const facultyData = [
       {
         name: "Ravi Gupta",
+        img: "ravi.png",   // direct file name
+        title: "Professor of Geography",
+        details: ""
+      },
+      {
+        name: "Yuvraj Singh Rathore",
+        img: "Yuvraj.png", // direct file name
+        title: "Professor of Geography",
+        details: ""
+      },
+      {
+        name: "Wini Verma",
+        img: "wini.png",   // direct file name
+        title: "Assistant Professor",
+        details: "2 Times JRF · PhD · UPSC Interview 2 Times"
+      }
+    ];
+
+    const facultyList = document.getElementById("facultyList");
+
+    facultyData.forEach(faculty => {
+      const card = document.createElement("div");
+      card.className = "faculty-card";
+      card.innerHTML = `
+        <img src="${faculty.img}" alt="${faculty.name}">
+        <h3>${faculty.name}</h3>
+        <p>${faculty.title}</p>
+        ${faculty.details ? `<p>${faculty.details}</p>` : ""}
+      `;
+      facultyList.appendChild(card);
+    });
+  </script>
+</body>
+</html>
+  <script>
+    const facultyData = [
+      {
+        name: "Ravi Gupta",
         img: "images/ravi.png",
         title: "Professor of Geography",
         details: ""
