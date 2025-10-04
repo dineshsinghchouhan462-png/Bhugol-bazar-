@@ -8,7 +8,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #fff;
+  background: #fff;
   color: #333;
 }
 
@@ -25,12 +25,26 @@ body {
   z-index: 1000;
 }
 
-.logo {
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: bold;
   color: #e63946;
 }
 
+/* Navbar links */
 .nav-links {
   display: flex;
   gap: 1.2rem;
@@ -51,17 +65,61 @@ body {
   color: #e63946;
 }
 
+/* Menu toggle (mobile) */
 .menu-toggle {
   display: none;
   cursor: pointer;
   font-size: 1.8rem;
 }
 
+/* 🏠 Hero Section */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fff7f7, #fce4e4);
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero span {
+  color: #e63946;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 📖 About Section */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fafafa;
+}
+
+.about h2 {
+  color: #e63946;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1rem;
+}
+
 /* 👨‍🏫 Faculty Section */
 .faculty {
   text-align: center;
-  padding: 50px 20px;
-  background: #fafafa;
+  padding: 60px 20px;
+  background: #fff;
 }
 
 .faculty h1 {
@@ -76,7 +134,6 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 0 1rem;
 }
 
 .faculty-card {
@@ -111,18 +168,55 @@ body {
   margin-bottom: 10px;
 }
 
-/* 📞 Footer */
+/* 📞 Footer Contact Section */
+.footer-contact {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.phone-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+  text-decoration: none;
+}
+
+.phone-number:hover {
+  text-decoration: underline;
+}
+
+/* 📱 WhatsApp Floating Icon */
+.quick-support {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.quick-support img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.quick-support img:hover {
+  transform: scale(1.1);
+}
+
+/* 🧾 Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: #f8f8f8;
-  margin-top: 3rem;
   font-size: 0.9rem;
   color: #555;
+  margin-top: 2rem;
 }
 
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
+/* 📱 Responsive (Mobile) */
+@media(max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
