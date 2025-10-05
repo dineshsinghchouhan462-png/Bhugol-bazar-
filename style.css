@@ -1,4 +1,6 @@
-/* 🌐 General Reset */
+/* ------------------------------
+   GENERAL RESET & BASE STYLE
+------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -6,48 +8,36 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #fff;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
   color: #333;
+  line-height: 1.6;
 }
 
-/* 🔹 Navbar */
+/* ------------------------------
+   NAVBAR
+------------------------------ */
 .navbar {
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  padding: 14px 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
-/* Logo container */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-}
-
-.logo-text {
+.logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #e63946;
 }
 
-/* Navbar links */
 .nav-links {
   display: flex;
-  gap: 1.2rem;
+  gap: 20px;
 }
 
 .nav-links a {
@@ -57,183 +47,239 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links .active {
   color: #e63946;
 }
 
-.nav-links a.active {
-  color: #e63946;
-}
-
-/* Menu toggle (mobile) */
+/* Mobile Menu */
 .menu-toggle {
   display: none;
+  font-size: 1.8rem;
   cursor: pointer;
-  font-size: 1.8rem;
 }
 
-/* 🏠 Hero Section */
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #fff7f7, #fce4e4);
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.hero span {
-  color: #e63946;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* 📖 About Section */
-.about {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fafafa;
-}
-
-.about h2 {
-  color: #e63946;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-.about p {
-  max-width: 700px;
-  margin: 0 auto;
-  color: #555;
-  font-size: 1rem;
-}
-
-/* 👨‍🏫 Faculty Section */
-.faculty {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
-}
-
-.faculty h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #222;
-}
-
-.faculty-list {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.faculty-card {
-  width: 280px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.faculty-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.faculty-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-}
-
-.faculty-card h3 {
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-  color: #111;
-}
-
-.faculty-card p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/* 📞 Footer Contact Section */
-.footer-contact {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.phone-number {
-  font-size: 20px;
-  font-weight: bold;
-  color: #e63946;
-  text-decoration: none;
-}
-
-.phone-number:hover {
-  text-decoration: underline;
-}
-
-/* 📱 WhatsApp Floating Icon */
-.quick-support {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.quick-support img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.quick-support img:hover {
-  transform: scale(1.1);
-}
-
-/* 🧾 Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f8f8f8;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 2rem;
-}
-
-/* 📱 Responsive (Mobile) */
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
     position: absolute;
-    top: 60px;
-    right: 10px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
+    top: 65px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    text-align: right;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   }
 
   .nav-links.active {
     display: flex;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ------------------------------
+   HERO SECTION (HOME PAGE)
+------------------------------ */
+.hero {
+  background: url("./banner-bg.jpg") center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.btn-primary {
+  margin-top: 15px;
+  padding: 10px 22px;
+  background: #e63946;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #c71c2b;
+}
+
+/* ------------------------------
+   FACULTY PAGE
+------------------------------ */
+.faculty {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.faculty h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.faculty-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 260px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.faculty-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.faculty-card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 4px;
+  color: #333;
+}
+
+.faculty-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+/* ------------------------------
+   EBOOKS PAGE
+------------------------------ */
+.ebooks {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9fafc;
+}
+
+.ebooks h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Grid layout for all ebook cards */
+.ebook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Each ebook card */
+.ebook-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.ebook-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Ebook images */
+.ebook-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-bottom: 2px solid #e63946;
+}
+
+/* Ebook title and price */
+.ebook-card h2 {
+  font-size: 1.1rem;
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+.ebook-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* Buy Now button */
+.ebook-card .btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #e63946;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: background 0.3s ease;
+}
+
+.ebook-card .btn:hover {
+  background: #c71c2b;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .ebook-img {
+    height: 280px;
+  }
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #e63946;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
   .menu-toggle {
     display: block;
   }
