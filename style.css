@@ -162,12 +162,17 @@ section h1, section h2 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .ebook-card img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -215,12 +220,17 @@ section h1, section h2 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .faculty-card img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -319,6 +329,6 @@ footer a:hover {
   }
 
   .ebook-card img, .faculty-card img {
-    height: 200px;
+    max-height: 250px;
   }
 }
