@@ -29,7 +29,17 @@ body {
   z-index: 999;
 }
 
-.logo {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: 700;
   color: #e63946;
@@ -122,109 +132,45 @@ body {
 }
 
 /* ------------------------------
-   FACULTY PAGE
+   SECTIONS
 ------------------------------ */
-.faculty {
+section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #fff;
 }
 
-.faculty h1 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #222;
-}
-
-.faculty-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.faculty-card {
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 100%;
-  max-width: 260px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.faculty-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-.faculty-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-.faculty-card h2 {
-  font-size: 1.1rem;
-  margin: 10px 0 4px;
-  color: #333;
-}
-
-.faculty-card p {
-  color: #555;
-  font-size: 0.9rem;
-  margin-bottom: 14px;
+section h1, section h2 {
+  margin-bottom: 20px;
+  color: #e63946;
 }
 
 /* ------------------------------
-   EBOOKS PAGE
+   EBOOK CARDS
 ------------------------------ */
-.ebooks {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f9fafc;
-}
-
-.ebooks h1 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #222;
-  font-weight: 600;
-}
-
-/* Grid layout for all ebook cards */
 .ebook-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
 }
 
-/* Each ebook card */
 .ebook-card {
+  width: 230px;
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 100%;
-  max-width: 280px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
 }
 
-.ebook-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-/* Ebook images */
-.ebook-img {
+.ebook-card img {
   width: 100%;
-  height: 360px;
+  height: 250px;
   object-fit: cover;
-  border-bottom: 2px solid #e63946;
+  border-radius: 8px;
 }
 
-/* Ebook title and price */
 .ebook-card h2 {
   font-size: 1.1rem;
   margin: 12px 0 6px;
@@ -237,7 +183,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* Buy Now button */
 .ebook-card .btn {
   display: inline-block;
   padding: 8px 18px;
@@ -253,11 +198,96 @@ body {
   background: #c71c2b;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .ebook-img {
-    height: 280px;
-  }
+/* ------------------------------
+   FACULTY CARDS
+------------------------------ */
+.faculty-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.faculty-card {
+  width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.faculty-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.faculty-card h3 {
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+.faculty-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+/* ------------------------------
+   NOTES PAGE
+------------------------------ */
+.notes p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ------------------------------
+   CONTACT FORM
+------------------------------ */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #c71c2b;
+}
+
+/* ------------------------------
+   WHATSAPP FLOATING BUTTON
+------------------------------ */
+.quick-support {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.quick-support img {
+  width: 60px;
+  height: 60px;
 }
 
 /* ------------------------------
@@ -268,7 +298,6 @@ footer {
   color: #ddd;
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
   font-size: 0.9rem;
 }
 
@@ -280,15 +309,16 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-  .menu-toggle {
-    display: block;
-  }
 
-  .faculty-card {
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+@media (max-width: 768px) {
+  .ebook-card, .faculty-card {
     width: 90%;
   }
 
-  .faculty-card img {
-    height: 250px;
+  .ebook-card img, .faculty-card img {
+    height: 200px;
   }
 }
